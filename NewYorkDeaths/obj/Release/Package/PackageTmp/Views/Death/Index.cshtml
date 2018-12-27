@@ -1,0 +1,63 @@
+﻿@model List<NewYorkDeaths.Models.Deaths>
+@{
+    ViewBag.Title = "Index";
+    var grid = new WebGrid(Model, canPage: true, rowsPerPage: 7,
+    selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+    grid.Pager(WebGridPagerModes.NextPrevious);
+}
+<h2>New York Death Records</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/chart.js"></script>
+    <title>Index</title>
+    <style>
+        .date-width {
+            width:100px
+        }
+    </style>
+</head>
+<body>
+    @grid.GetHtml(tableStyle: "table responsive table table-striped table-bordered table-hover",
+    headerStyle: "thead-dark",
+        htmlAttributes: new { @id = "WebGrid" },
+        columns: grid.Columns(
+                 grid.Column("Date", "Death Date", style: "date-width", format: item => ((item.Date == null) ? "" : item.Date.ToString("MM/dd/yyyy"))),
+                 grid.Column("LeadingCause", "Leading Cause"),
+                 grid.Column("Sex", "Gender"),
+                 grid.Column("RaceEthnicity", "Race Ethnicity"),
+                 grid.Column("", style: "button",
+                format:
+                                @<text>
+                                    <button class="btn btn-default" onclick="getDetailsbyId('@item.DeathId')" id="@item.DeathId">Details</button>
+                                </text>)
+
+                                                                          ))
+  
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Death Cause Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Leading Cause : <label id="LeadingCause"></label><br />
+                    Gender : <label id="Gender"></label><br />
+                    Race Ethnicity : <label id="Ethnicity"></label><br />
+                    Death Rate : <label id="Rate"></label><br />
+                    Age Adjusted Death Rate : <label id="AdjustedRate"></label><br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

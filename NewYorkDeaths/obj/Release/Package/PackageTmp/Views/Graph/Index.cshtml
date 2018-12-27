@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .padding{
+        padding:10px
+    }
+</style>
+<h2>Graphical representation of New York Death Rates</h2>
+<script src="~/Scripts/chart.js"></script>
+<ul class="nav flex-column">
+    <li class="nav-item padding">
+        <a class="nav-link alert alert-danger padding" href="#" onclick="showModal('gender')">COUNT OF DEATHS BY GENDER</a>
+    </li>
+    <li class="nav-item padding">
+        <a class="nav-link  alert alert-info padding" href="#" onclick="showModal('cause')">TOP CAUSES OF DEATHS</a>
+    </li>
+    <li class="nav-item padding">
+        <a class="nav-link  alert alert-success padding" href="#" onclick="showModal('year')">OVERALL TREND OF DEATHS IN NEW YORK</a>
+    </li>
+</ul>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Visualization</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="div_chart" style="width:100%;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

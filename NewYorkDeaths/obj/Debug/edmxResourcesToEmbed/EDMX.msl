@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewYorkDeathsModelStoreContainer" CdmEntityContainer="NewYorkDeathsEntities">
+    <EntitySetMapping Name="Deaths">
+      <EntityTypeMapping TypeName="NewYorkDeathsModel.Death">
+        <MappingFragment StoreEntitySet="Deaths">
+          <ScalarProperty Name="DeathId" ColumnName="DeathId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LeadingCause" ColumnName="LeadingCause" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="RaceEthnicity" ColumnName="RaceEthnicity" />
+          <ScalarProperty Name="Deaths" ColumnName="Deaths" />
+          <ScalarProperty Name="DeathRate" ColumnName="DeathRate" />
+          <ScalarProperty Name="AgeAdjustedDeathRate" ColumnName="AgeAdjustedDeathRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

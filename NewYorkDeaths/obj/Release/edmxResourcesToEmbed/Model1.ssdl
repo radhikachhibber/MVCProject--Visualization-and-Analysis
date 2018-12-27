@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDATModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.AcademicOutcomes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AcademicOutcomes">
+          <Property Name="STUDENT_ID" Type="float" />
+          <Property Name="DEGREE" Type="nvarchar" MaxLength="255" />
+          <Property Name="DEGREE_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATUS_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="MAJOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="MAJOR_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="STUDENT_LEVEL" Type="nvarchar" MaxLength="255" />
+          <Property Name="STUDENT_LEVEL_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="APPLIED_FOR_OUTCOME_IND" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADUATED_IND" Type="nvarchar" MaxLength="255" />
+          <Property Name="OUTCOME_APPLICATION_DATE" Type="nvarchar" MaxLength="255" />
+          <Property Name="OUTCOME_GRADUATION_DATE" Type="nvarchar" MaxLength="255" />
+          <Property Name="BULLETIN_YEAR" Type="nvarchar" MaxLength="255" />
+          <Property Name="BULLETIN_YEAR_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="CAMPUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="CAMPUS_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_PERIOD" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_PERIOD_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="DEPARTMENT" Type="nvarchar" MaxLength="255" />
+          <Property Name="DEPARTMENT_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_YEAR_GRADUATION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_YEAR_GRADUATION_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_PERIOD_GRADUATION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACADEMIC_PERIOD_GRAD_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADUATION_STATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADUATION_STATUS_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRAD_REQ_COMPLETED_ACAD_PER" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRAD_REQ_COMP_ACAD_PER_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="CREDITS_ATTEMPTED" Type="float" />
+          <Property Name="CREDITS_EARNED" Type="float" />
+          <Property Name="CREDITS_PASSED" Type="float" />
+          <Property Name="GPA" Type="float" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.AllGeorgianGrads' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AllGeorgianGrads">
+          <Property Name="Student ID" Type="float" />
+          <Property Name="Perm City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Perm Prov" Type="nvarchar" MaxLength="255" />
+          <Property Name="Permanent Country" Type="float" />
+          <Property Name="Current Country" Type="float" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="255" />
+          <Property Name="Grad Year" Type="float" />
+          <Property Name="Grad Term" Type="nvarchar" MaxLength="255" />
+          <Property Name="Term Code" Type="float" />
+          <Property Name="Year" Type="nvarchar" MaxLength="255" />
+          <Property Name="Grad Prg MTCU" Type="float" />
+          <Property Name="Grad Prg Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Grad Sts" Type="nvarchar" MaxLength="255" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="255" />
+          <Property Name="College Prg Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coll Prg Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coll Cmp" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.CountryCodes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CountryCodes">
+          <Property Name="StatisticCanadaStandardCountry" Type="float" />
+          <Property Name="PSISCountryName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PSISCountryCode" Type="float" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BDAT.dbo.CTVNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.datekh' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="datekh">
+          <Property Name="date" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="Deaths">
+    <Key>
+      <PropertyRef Name="DeathId" />
+    </Key>
+    <Property Name="DeathId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="LeadingCause" Type="varchar" MaxLength="500" />
+    <Property Name="Sex" Type="varchar" MaxLength="500" />
+    <Property Name="RaceEthnicity" Type="varchar" MaxLength="500" />
+    <Property Name="Deaths" Type="varchar" MaxLength="500" />
+    <Property Name="DeathRate" Type="varchar" MaxLength="500" />
+    <Property Name="AgeAdjustedDeathRate" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BDAT.dbo.GlobalNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.StudentCourse' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="StudentCourse">
+          <Property Name="STUDENT_ID" Type="float" />
+          <Property Name="ACADEMIC_PERIOD" Type="nvarchar" MaxLength="255" />
+          <Property Name="COURSE_IDENTIFICATION" Type="nvarchar" MaxLength="255" />
+          <Property Name="COURSE_TITLE_SHORT" Type="nvarchar" MaxLength="255" />
+          <Property Name="SCHEDULE_TYPE_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="COURSE_LEVEL_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADE_TYPE_DESC" Type="nvarchar" MaxLength="255" />
+          <Property Name="FINAL_GRADE" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADE_VALUE (use this value)" Type="float" />
+          <Property Name="PASS" Type="float" />
+          <Property Name="FAIL" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.Students' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Students">
+          <Property Name="STUDENT_ID" Type="float" />
+          <Property Name="RESIDENCY" Type="nvarchar" MaxLength="255" />
+          <Property Name="201220" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201220" Type="nvarchar" MaxLength="255" />
+          <Property Name="201230" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201230" Type="nvarchar" MaxLength="255" />
+          <Property Name="201310" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201310" Type="nvarchar" MaxLength="255" />
+          <Property Name="201320" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROGRAM_CODE_201320" Type="nvarchar" MaxLength="255" />
+          <Property Name="201330" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201330" Type="nvarchar" MaxLength="255" />
+          <Property Name="201410" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201410" Type="nvarchar" MaxLength="255" />
+          <Property Name="201420" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201420" Type="nvarchar" MaxLength="255" />
+          <Property Name="201430" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201430" Type="nvarchar" MaxLength="255" />
+          <Property Name="201510" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201510" Type="nvarchar" MaxLength="255" />
+          <Property Name="201520" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201520" Type="nvarchar" MaxLength="255" />
+          <Property Name="201530" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201530" Type="nvarchar" MaxLength="255" />
+          <Property Name="201610" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201610" Type="nvarchar" MaxLength="255" />
+          <Property Name="201620" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201620" Type="nvarchar" MaxLength="255" />
+          <Property Name="201630" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201630" Type="nvarchar" MaxLength="255" />
+          <Property Name="201710" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201710" Type="nvarchar" MaxLength="255" />
+          <Property Name="201720" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201720" Type="nvarchar" MaxLength="255" />
+          <Property Name="201730" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAM_CODE_201730" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BDAT.dbo.WineReviews' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="WineReviews">
+          <Property Name="F1" Type="float" />
+          <Property Name="country" Type="nvarchar" MaxLength="255" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="designation" Type="nvarchar" MaxLength="255" />
+          <Property Name="points" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="province" Type="nvarchar" MaxLength="255" />
+          <Property Name="region_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="region_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="variety" Type="nvarchar" MaxLength="255" />
+          <Property Name="winery" Type="nvarchar" MaxLength="255" />
+          <Property Name="average(points,price)" Type="float" />
+        </EntityType>-->
+  <EntityContainer Name="BDATModelStoreContainer">
+    <EntitySet Name="Deaths" EntityType="Self.Deaths" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

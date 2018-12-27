@@ -1,0 +1,53 @@
+﻿@model List<NewYorkDeaths.Models.Deaths>
+@{
+    ViewBag.Title = "Data By Range";
+    var grid = new WebGrid(Model, canPage: true, rowsPerPage: 8,
+   selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+    grid.Pager(WebGridPagerModes.NextPrevious);
+}
+
+<h2>Data by category</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <title>Index</title>
+</head>
+<body>
+    @Html.DropDownList("Range", new List<SelectListItem>
+    {
+        new SelectListItem{ Text="Select Range", Value = "0" },
+        new SelectListItem{ Text="Male", Value = "1" },
+        new SelectListItem{ Text="Female", Value = "2" },
+        new SelectListItem{ Text="Year - 2014", Value = "3" },
+     }, new { onchange = "GetRecordsByRange(this);" , @class="form-control"})
+
+    <br />
+    @if (Session["deaths"] != null)
+        {
+    @grid.GetHtml(tableStyle: "table responsive table table-striped table-bordered table-hover",
+headerStyle: "thead-dark",
+ htmlAttributes: new { @id = "GridByRange" },
+ columns: grid.Columns(
+          grid.Column("Date", "Date", format: item => ((item.Date == null) ? "" : item.Date.ToString("MM/dd/yyyy"))),
+          grid.Column("LeadingCause", "Leading Cause"),
+          grid.Column("Sex", "Gender"),
+          grid.Column("RaceEthnicity", "Race Ethnicity"),
+          grid.Column("DeathRate", "DeathRate"),
+          grid.Column("AgeAdjustedDeathRate", "Age Adjusted Death Rate")
+          ))
+        }
+</body>
+</html>
+<script>
+    function GetRecordsByRange(value) {
+        $.ajax({
+            type: "post",
+            data: { "param": $(value).val() },
+            url: '@Url.Action("GetRangeData", "Death")',
+            success: function () {
+                location.reload();
+            }
+        })
+    }
+</script>
